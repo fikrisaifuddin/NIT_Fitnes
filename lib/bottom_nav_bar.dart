@@ -25,7 +25,6 @@ class BottomNavBar extends StatefulWidget {
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
-
 class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
 
@@ -49,8 +48,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Colors.blue, 
-        unselectedItemColor: Colors.grey, 
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
         items: [
           BottomNavigationBarItem(

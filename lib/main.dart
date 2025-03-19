@@ -1,3 +1,4 @@
+import 'package:fitnes_ptnit/screens/Login.dart';
 import 'package:flutter/material.dart';
 import 'bottom_nav_bar.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const BottomNavBar(), 
+      home: LoginScreen(), 
     );
   }
 }

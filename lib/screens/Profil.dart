@@ -1,6 +1,4 @@
-import 'package:fitnes_ptnit/profile_screen/EditProfile.dart';
 import 'package:fitnes_ptnit/profile_screen/YourList.dart';
-import 'package:fitnes_ptnit/profile_screen/akun.dart';
 import 'package:fitnes_ptnit/profile_screen/history.dart';
 import 'package:flutter/material.dart';
 
@@ -42,8 +40,20 @@ class ProfileScreen extends StatelessWidget {
             Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12)),
-              child: ListTile(
-                title: Text('Informasi member'),
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.card_membership),
+                    title: Text('Informasi Membership'),
+                    
+                  ),
+                  ListTile(
+                    title: Text('Email'),
+                  ),
+                  ListTile(
+                    title: Text('No Telpon'),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 20),
@@ -61,26 +71,6 @@ class ProfileScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => History()),
-                      );
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Edit Profile'),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => EditProfile()),
-                      );
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Akun'),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Akun()),
                       );
                     },
                   ),
@@ -114,8 +104,8 @@ class ProfileScreen extends StatelessWidget {
                 children: List.generate(
                   sosialMedia.length,
                   (index) => ListTile(
-                    leading: Icon(sosialMedia[index]['icon'],
-                        color: Colors.black), 
+                    leading:
+                        Icon(sosialMedia[index]['icon'], color: Colors.black),
                     title: Text(sosialMedia[index]['name']),
                   ),
                 ),

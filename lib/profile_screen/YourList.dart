@@ -5,7 +5,32 @@ class Yourlist extends StatelessWidget {
   final List<Map<String, dynamic>> workoutList = [
     {
       "shape": Colors.grey,
-      "title": "workout1",
+      "title": "Strength",
+      "description": "Latihan yang melibatkan seluruh tubuh dalam satu sesi."
+    },
+    {
+      "shape": Colors.grey,
+      "title": "HIIT",
+      "description": "Latihan yang melibatkan seluruh tubuh dalam satu sesi."
+    },
+    {
+      "shape": Colors.grey,
+      "title": "Yoga",
+      "description": "Latihan yang melibatkan seluruh tubuh dalam satu sesi."
+    },
+    {
+      "shape": Colors.grey,
+      "title": "Cardio",
+      "description": "Latihan yang melibatkan seluruh tubuh dalam satu sesi."
+    },
+    {
+      "shape": Colors.grey,
+      "title": "Warmup",
+      "description": "Latihan yang melibatkan seluruh tubuh dalam satu sesi."
+    },
+    {
+      "shape": Colors.grey,
+      "title": "Recovery",
       "description": "Latihan yang melibatkan seluruh tubuh dalam satu sesi."
     },
   ];
@@ -20,7 +45,6 @@ class Yourlist extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 20),
           Expanded(child: _buildWorkoutList()),
         ],
       ),
@@ -44,17 +68,15 @@ class Yourlist extends StatelessWidget {
               padding: EdgeInsets.all(10),
               child: Row(
                 children: [
-                  // Kotak warna sebagai representasi bentuk (shape)
                   Container(
                     width: 80,
                     height: 80,
                     decoration: BoxDecoration(
-                      color: workout["shape"], // Warna berdasarkan data
+                      color: workout["shape"],
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
                   SizedBox(width: 16),
-                  // Bagian teks: title & description
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

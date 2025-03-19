@@ -27,35 +27,35 @@ class KelasScreen extends StatelessWidget {
       "title": "Kelas Stretching",
       "description": "Peregangan untuk mengurangi cedera dan kaku otot.",
     },
+    {
+      "shape": Colors.grey,
+      "title": "Kelas Dance",
+      "description": "Latihan menari untuk kesehatan dan kebugaran.",
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Workout List'),
+      ),
       backgroundColor: Colors.grey[200],
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 20),
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'Kelas',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Expanded(child: _buildKelasList()),
+          Expanded(child: _KelasList()),
         ],
       ),
     );
   }
 
-  Widget _buildKelasList() {
+  Widget _KelasList() {
     return ListView.builder(
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       itemCount: kelasList.length,
       itemBuilder: (context, index) {
-        final kelas = kelasList[index];
+        final workout = kelasList[index];
 
         return Container(
           margin: EdgeInsets.only(bottom: 8),
@@ -64,14 +64,14 @@ class KelasScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(10),
               child: Row(
                 children: [
                   Container(
                     width: 80,
                     height: 80,
                     decoration: BoxDecoration(
-                      color: kelas["shape"],
+                      color: workout["shape"],
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
@@ -81,7 +81,7 @@ class KelasScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          kelas["title"],
+                          workout["title"],
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -89,8 +89,8 @@ class KelasScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 5),
                         Text(
-                          kelas["description"],
-                          style: TextStyle(fontSize: 12),
+                          workout["description"],
+                          style: TextStyle(fontSize: 12, color: Colors.blue),
                         ),
                         SizedBox(height: 4),
                         Text(
@@ -103,7 +103,6 @@ class KelasScreen extends StatelessWidget {
                 ],
               ),
             ),
-            
           ),
         );
       },
